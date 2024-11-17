@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-const AddProductForm = ({ onAddProduct }) => {
+const AddProductForm = ({ addProduct }) => {
   
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -12,14 +12,8 @@ const AddProductForm = ({ onAddProduct }) => {
   const handleSubmit = (e) => {
     e.preventDefault(); 
 
-    // Ensure all fields are filled
-    if (!name || !price || !description) {
-      alert("Please fill in all fields");
-      return;
-    }
-
     // Adds new products
-    onAddProduct({ name, price: parseFloat(price), description });
+    addProduct({ name, price: parseFloat(price), description });
 
     setName("");
     setPrice("");
@@ -38,7 +32,7 @@ const AddProductForm = ({ onAddProduct }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Product name"
-            required
+            required /*This makes it so that there has to be an input, otherwise it will not complete request*/
           />
         </label>
       </div>
@@ -50,7 +44,7 @@ const AddProductForm = ({ onAddProduct }) => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder="Product price"
-            required
+            required /*This makes it so that there has to be an input, otherwise it will not complete request*/
           />
         </label>
       </div>
@@ -62,7 +56,7 @@ const AddProductForm = ({ onAddProduct }) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Product description"
-            required
+            required /*This makes it so that there has to be an input, otherwise it will not complete request*/
           />
         </label>
       </div>
