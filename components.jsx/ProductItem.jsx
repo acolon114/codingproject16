@@ -2,6 +2,7 @@
 
 import  React from 'react';
 
+//Displays Products price, name, and description
 function ProductItem ({ product }) {
     return (
         <li>

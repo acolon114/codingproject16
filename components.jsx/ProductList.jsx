@@ -3,14 +3,14 @@
 import React from 'react';
 import ProductItem from './ProductItem'
 
-
+// Creates list of products in order
 function ProductList({ products }) {
     return (
-        <ul>
+        <ol>
             {products.map(product => (
                 <ProductItem key={product.id} product={product} />
             ))}
-        </ul>
+        </ol>
     );
 }
 
