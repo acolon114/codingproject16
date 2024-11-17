@@ -1,19 +1,19 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
-import ProductList from './components/ProductList';
-import AddProductForm from './components/AddProductForm.jsx';
+import  ProductList  from '../components.jsx/ProductList.jsx';
+import  AddProductForm  from '../components.jsx/AddProductForm.jsx';
 
 
 function App() {
   
 // List of products
 const [products, setProducts] = useState([
-  { id: 1, name: "Pizza", price: 20, description: "Pepperoni or Cheese" },
-  { id: 2, name: "Soda", price: 2.50, description: "Coke or Pepsi" },
-  { id: 3, name: "Paper Plates", price: 5, description: "Paper Plates" }
+  { id: 1, name: "Pizza", price: 20, description: "XL Pepperoni Pizza Pie" },
+  { id: 2, name: "Soda", price: 2.50, description: "2L of Coke" },
+  { id: 3, name: "Paper Plates", price: 5, description: "50 Paper Plates" }
 ]);
 
-  // Function to add a new product
+  //Task 7: Pass Data Between Components
   const addProduct = (newProduct) => {
     setProducts([...products, newProduct]);
   };
