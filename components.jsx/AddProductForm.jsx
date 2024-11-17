@@ -26,6 +26,7 @@ const AddProductForm = ({ onAddProduct }) => {
     setDescription("");
   };
 
+//Creates Form for user to input new product information
   return (
     <form onSubmit={handleSubmit}>
       <h2>Add New Product</h2>
