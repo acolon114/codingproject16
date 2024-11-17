@@ -2,25 +2,31 @@
 
 import React, { useState } from "react";
 
-const AddProductForm = ({ addProduct }) => {
+const AddProductForm = ({ onAddProduct }) => {
   
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
-  // Handles the form for submission
+  // Handles the Form for Submission
   const handleSubmit = (e) => {
     e.preventDefault(); 
 
+  // Ensure That All Fields are Filled in Before Submitting
+    if (!name || !price || !description) {
+      alert("Complete All Inputs");
+      return;
+      }
+
     // Adds new products
-    addProduct({ name, price: parseFloat(price), description });
+    onAddProduct({ name, price: parseFloat(price), description });
 
     setName("");
     setPrice("");
     setDescription("");
   };
 
-//Creates Form for user to input new product information
+//Creates Form For User to Input New Product Information
   return (
     <form onSubmit={handleSubmit}>
       <h2>Add New Product</h2>
