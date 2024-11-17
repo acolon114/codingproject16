@@ -18,6 +18,7 @@ const [products, setProducts] = useState([
     setProducts([...products, newProduct]);
   };
 
+  //Output That is Shown on Webpage
   return (
     <>
       <h1>Product Management Dashboard</h1>
